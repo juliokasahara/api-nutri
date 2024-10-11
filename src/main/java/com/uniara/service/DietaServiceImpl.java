@@ -48,4 +48,22 @@ public class DietaServiceImpl implements DietaService {
 
     }
 
+    @Override
+    public Dieta editarDietaUsuario(DietaDTO dietaDTO) {
+
+        Dieta dieta = dietaRepository.findById(dietaDTO.getId())
+                .orElseThrow(() -> new RuntimeException("Dieta não encontrado"));
+
+        dieta.setCaloria(dietaDTO.getCaloria());
+        dieta.setNome(dietaDTO.getNome());
+        dieta.setDescricao(dietaDTO.getDescricao());
+
+        return dietaRepository.save(dieta);
+    }
+
+    @Override
+    public List<Dieta> findAll() {
+        return dietaRepository.findAll();
+    }
+
 }

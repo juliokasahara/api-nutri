@@ -9,5 +9,6 @@ public interface DietaService {
     Dieta save(Dieta dieta);
     List<Dieta> listarDietasDeUsuario(Long idUsuario);
     void cadastrarDietaUsuario(Long idUsuario, DietaDTO dietaDTO);
-
+    Dieta editarDietaUsuario(DietaDTO dietaDTO);
+    List<Dieta> findAll();
 }

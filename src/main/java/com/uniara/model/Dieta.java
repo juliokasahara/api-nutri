@@ -29,4 +29,10 @@ public class Dieta {
     @ManyToMany(mappedBy = "dietas")
     private Set<Usuario> usuarios = new HashSet<>();
 
+    public Dieta(String nome, String descricao, BigDecimal caloria) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.caloria = caloria;
+    }
+
 }

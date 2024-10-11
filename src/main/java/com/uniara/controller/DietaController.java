@@ -20,6 +20,11 @@ public class DietaController {
         return service.save(dieta);
     }
 
+    @GetMapping()
+    private List<Dieta> listarDietas(){
+        return service.findAll();
+    }
+
     @GetMapping("/usuario/{id}")
     private List<Dieta> listarDietasDeUsuario(@PathVariable Long id){
         return service.listarDietasDeUsuario(id);
@@ -28,6 +33,11 @@ public class DietaController {
     @PostMapping("/usuario/{id}")
     private void cadastrarDieta(@PathVariable Long id,@Valid @RequestBody DietaDTO dietaDTO){
         service.cadastrarDietaUsuario(id, dietaDTO);
+    }
+
+    @PutMapping("/editar")
+    private Dieta editarDieta(@Valid @RequestBody DietaDTO dietaDTO){
+        return service.editarDietaUsuario(dietaDTO);
     }
 
 }

@@ -15,6 +15,7 @@ import java.math.BigDecimal;
 @Setter
 public class DietaDTO {
 
+    private Long id;
     @NotBlank(message = "O nome da dieta não pode estar vazio")
     private String nome;
     @NotBlank(message = "A descrição não pode estar vazia")
